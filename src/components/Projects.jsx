@@ -26,15 +26,15 @@ const projectsData = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 dark:bg-gray-800 light:bg-gray-100">
       <div className="max-w-5xl mx-auto px-4">
-        <h3 className="text-3xl font-bold mb-10 text-center">Избрани Проекти</h3>
+        <h3 className="text-3xl font-bold mb-10 text-center dark:text-indigo-600">Избрани Проекти</h3>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Тук магията се случва: въртим масива с .map() */}
           {projectsData.map((project) => (
-            <div key={project.id} className="border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition">
-              <div className="h-48 bg-gray-200 rounded-lg mb-4 flex items-center justify-center text-gray-400">
+            <div key={project.id} className="border dark:border-gray-600 rounded-xl p-6 shadow-sm hover:shadow-md transition">
+              <div className="h-48 dark:bg-gray-600 rounded-lg mb-4 flex items-center justify-center text-gray-400">
                 {project.image}
               </div>
               <h4 className="text-xl font-bold mb-2">{project.title}</h4>

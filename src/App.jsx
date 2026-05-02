@@ -5,7 +5,7 @@ import Footer from './components/Footer.jsx';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800 font-sans">
+    <div className="min-h-screen dark:bg-gray-50 text-gray-800 font-sans">
       <Navbar />
       <Hero />
       <Projects />
