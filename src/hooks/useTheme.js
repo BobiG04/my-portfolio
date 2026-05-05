@@ -4,7 +4,7 @@ import  { useState, useEffect} from 'react';
 export default function useTheme() {
     
     // state for the theme, default is dark
-    const [isDark, setIsDark] = useState(true);
+    const [isDark, setIsDark] = useState(false);
 
     // an effect to update the DOM
     useEffect(() => {
