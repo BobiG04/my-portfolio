@@ -16,18 +16,22 @@ export default function HeroSection() {
     };
 
     return(
-        <main className="flex-1 w-full max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-stretch justify-between">
+        <main className="flex-1 w-full max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
         {/* Left side: Introduction Text */}
-        <div className="md:w-1/2 flex flex-col justify-center gap-6 py-12 md:py-0">
-          <h2 className="text-5xl md:text-6xl font-bold">{t[lang].greeting}</h2>
-          <p className="text-xl opacity-80 leading-relaxed">
+        <div className="md:w-1/2 flex flex-col justify-center gap-6 py-12 md:py-0 z-10">
+          <h2 className="text-5xl md:text-7xl font-extrabold tracking-tight">{t[lang].greeting}</h2>
+          <p className="text-xl opacity-80 leading-relaxed max-w-lg">
             {t[lang].description}
           </p>
         </div>
 
         {/* Right side: Image */}
-        <div className="md:w-1/2 flex justify-end items-end">
-          <img src={portfolioPic} alt="Profile" className="h-[60vh] md:h-[calc(100vh-80px)] w-full object-contain object-bottom md:object-right-bottom drop-shadow-2xl" />
+        <div className="md:w-1/2 flex justify-center md:justify-end items-end w-full h-full">
+          <img 
+            src={portfolioPic} 
+            alt="Profile" 
+            className="max-h-[50vh] md:max-h-[75vh] w-auto object-contain drop-shadow-[-2px_-2px_10px_rgba(0,0,0,0.5)] md:pr-8 [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)] -webkit-mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)]" 
+          />
         </div>
       </main>
     );
