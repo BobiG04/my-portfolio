@@ -5,13 +5,33 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Богомил Иванов - Портфолио</title>
+    
     <script>
-      // Този скрипт се изпълнява мигновено и предотвратява бялото примигване
       document.documentElement.classList.add('dark');
-      document.documentElement.style.backgroundColor = '#18181b'; // zinc-900 цвят
+      document.documentElement.style.backgroundColor = '#18181b';
     </script>
+
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'bg',
+          includedLanguages: 'bg,en',
+          autoDisplay: false
+        }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <style>
+      .goog-te-banner-frame, .goog-te-balloon-frame, .goog-te-gadget-icon { display: none !important; }
+      body { top: 0 !important; }
+      .skiptranslate { display: none !important; }
+      iframe#\:1\.container { display: none !important; }
+    </style>
   </head>
   <body>
+    <div id="google_translate_element" style="display:none"></div>
+    
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

@@ -1,14 +1,27 @@
 import { createContext, useContext, useState } from 'react';
 
-// 1. Create the context
 const LanguageContext = createContext();
 
-// 2. Create the provider component to wrap your app
 export function LanguageProvider({ children }) {
-    const [lang, setLang] = useState('bg');
+    const getLangFromCookie = () => {
+        const match = document.cookie.match(/(?:^|; )googtrans=([^;]*)/);
+        if (match) {
+            const parts = match[1].split('/');
+            return parts[2] || 'bg'; 
+        }
+        return 'bg';
+    };
+
+    const [lang, setLang] = useState(getLangFromCookie());
 
     const toggleLang = () => {
-        setLang((prev) => (prev === 'en' ? 'bg' : 'en'));
+        const newLang = lang === 'bg' ? 'en' : 'bg';
+        setLang(newLang);
+        
+        document.cookie = `googtrans=/bg/${newLang}; path=/`;
+        document.cookie = `googtrans=/bg/${newLang}; domain=localhost; path=/`;
+        
+        window.location.reload();
     };
 
     return (
@@ -18,7 +31,7 @@ export function LanguageProvider({ children }) {
     );
 }
 
-// 3. Create the custom hook for components to use
+// Тук е ключовата промяна - само това е default!
 export default function useLanguage() {
     return useContext(LanguageContext);
 }
