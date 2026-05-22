@@ -11,6 +11,13 @@ export default function ProjectsSection() {
         fetch('https://api.github.com/users/BobiG04/repos?sort=updated&per_page=6')
             .then(response => response.json())
             .then(async (data) => {
+                if (!Array.isArray(data)) {
+                    console.error("Грешка от GitHub (вероятно лимит):", data.message);
+                    setProjects([]); // Задаваме празен масив, за да не гърми страницата
+                    setIsLoading(false);
+                    return; // Прекратяваме изпълнението
+                }
+
                 const myRepos = data.filter(repo => !repo.fork);
 
                 // 2. Правим нова заявка за всеки отделен проект, за да му вземем ВСИЧКИ езици
